@@ -1,45 +1,72 @@
 <!doctype html>
-<html lang="en" >
+<html lang="en">
 
 <head>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>HTML tutorial for BVI</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tutorial 2: What is an HTML Tag Label? — HTML Tutorial (Audio)</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-    
 
 <body>
-    <div class="container">
-        <div class="cardME">
-        <h3>Tutorial Part 2: What is an HTML Tag Label?</h3>
-        
-        <div class="sourceME">
-        <audio controls id="t1">
-          <source src="Audios/2-What%20is%20an%20HTML%20Tag%20Label.mp3" type="audio/mpeg" >
-            Your browser does not support the audio element.
-        </audio>
-        </div>
-            
-        <div class="text-center">
-            <input type="button" class="btn btn-dark center-block" value="Click here to Play the Audio file" onclick="document.getElementById('t1').play()">
-            
-        </div>
-        <div class="clearfix">
-            <input type="button" class="btn btn-warning float-left" value="< Previous Tutorial" onclick="location.href='tutorial1.html';" style="margin: 20px;" >
-            <input type="button" class="btn btn-success float-right" value="Next Tutorial >" onclick="location.href='tutorial3.html';" style="margin: 20px;" >
-        </div>   
-            
-        </div>
-    </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <header class="site-header" role="banner">
+    <div class="container">
+      <p class="eyebrow">Tutorial 2 of 5</p>
+      <h1 class="site-title">What is an HTML Tag Label?</h1>
+      <p class="site-subtitle">Audio-first learning for Blind & Visually Impaired learners</p>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="card">
+      <h2 class="sr-only">Lesson audio</h2>
+
+      <div class="audio-block" aria-label="Audio player for Tutorial 2">
+        <audio id="audio" controls preload="metadata">
+          <source src="Audios/2-What%20is%20an%20HTML%20Tag%20Label.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="button" id="playBtn">Play audio</button>
+          <button class="btn btn-secondary" type="button" id="restartBtn">Restart</button>
+        </div>
+
+        <p class="muted">Tip: Tab to the player, then use Space to play/pause.</p>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="Tutorial navigation">
+      <a class="btn btn-ghost" href="tutorial1.html">← Previous tutorial</a>
+      <a class="btn btn-primary" href="tutorial3.html">Next tutorial →</a>
+    </nav>
+
+    <nav class="pager" aria-label="Site navigation">
+      <a class="btn btn-ghost" href="index.html">Back to home</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="muted">
+        HTML Tutorial (Audio) for BVI learners •
+        By <a href="https://hmahkareem.github.io/Resume/" target="_blank" rel="noopener noreferrer">
+          Hussain Mahkareem
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const audio = document.getElementById("audio");
+    document.getElementById("playBtn").addEventListener("click", () => audio.play());
+    document.getElementById("restartBtn").addEventListener("click", () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+  </script>
 </body>
 
 </html>
